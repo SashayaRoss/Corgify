@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1F9ADA909B2E74779429D0 /* Pods_Corgify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A8462E87B91425FA35210 /* Pods_Corgify.framework */; };
 		7ED4334D298D62D1004E8AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4334C298D62D1004E8AD1 /* AppDelegate.swift */; };
 		7ED4334F298D62D1004E8AD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4334E298D62D1004E8AD1 /* SceneDelegate.swift */; };
 		7ED43351298D62D1004E8AD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43350298D62D1004E8AD1 /* HomeViewController.swift */; };
@@ -28,11 +29,15 @@
 		7ED43383298D66FE004E8AD1 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43382298D66FE004E8AD1 /* PlaylistModel.swift */; };
 		7ED43385298D670A004E8AD1 /* AudioTrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43384298D670A004E8AD1 /* AudioTrackModel.swift */; };
 		7ED43387298D6710004E8AD1 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43386298D6710004E8AD1 /* ArtistModel.swift */; };
-		7ED43389298D671A004E8AD1 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43388298D671A004E8AD1 /* ProfileModel.swift */; };
+		7ED43389298D671A004E8AD1 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43388298D671A004E8AD1 /* UserProfileModel.swift */; };
 		7ED4338B298D7BCA004E8AD1 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4338A298D7BCA004E8AD1 /* AuthResponse.swift */; };
+		7ED4338D299931A5004E8AD1 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4338C299931A5004E8AD1 /* SettingsModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0676BC325844387C437DB1F4 /* Pods-Corgify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Corgify.debug.xcconfig"; path = "Target Support Files/Pods-Corgify/Pods-Corgify.debug.xcconfig"; sourceTree = "<group>"; };
+		369121501A8A04BB7720986C /* Pods-Corgify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Corgify.release.xcconfig"; path = "Target Support Files/Pods-Corgify/Pods-Corgify.release.xcconfig"; sourceTree = "<group>"; };
+		5F7A8462E87B91425FA35210 /* Pods_Corgify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Corgify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED43349298D62D1004E8AD1 /* Corgify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Corgify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED4334C298D62D1004E8AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ED4334E298D62D1004E8AD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +61,9 @@
 		7ED43382298D66FE004E8AD1 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
 		7ED43384298D670A004E8AD1 /* AudioTrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrackModel.swift; sourceTree = "<group>"; };
 		7ED43386298D6710004E8AD1 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
-		7ED43388298D671A004E8AD1 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		7ED43388298D671A004E8AD1 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		7ED4338A298D7BCA004E8AD1 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		7ED4338C299931A5004E8AD1 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,17 +71,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1F9ADA909B2E74779429D0 /* Pods_Corgify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0262DDF6E0977E1845D0BAA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F7A8462E87B91425FA35210 /* Pods_Corgify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F941BCDBFC5D91D7714C5C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0676BC325844387C437DB1F4 /* Pods-Corgify.debug.xcconfig */,
+				369121501A8A04BB7720986C /* Pods-Corgify.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7ED43340298D62D1004E8AD1 = {
 			isa = PBXGroup;
 			children = (
 				7ED4334B298D62D1004E8AD1 /* Corgify */,
 				7ED4334A298D62D1004E8AD1 /* Products */,
+				4F941BCDBFC5D91D7714C5C9 /* Pods */,
+				0262DDF6E0977E1845D0BAA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,8 +152,9 @@
 				7ED43382298D66FE004E8AD1 /* PlaylistModel.swift */,
 				7ED43384298D670A004E8AD1 /* AudioTrackModel.swift */,
 				7ED43386298D6710004E8AD1 /* ArtistModel.swift */,
-				7ED43388298D671A004E8AD1 /* ProfileModel.swift */,
+				7ED43388298D671A004E8AD1 /* UserProfileModel.swift */,
 				7ED4338A298D7BCA004E8AD1 /* AuthResponse.swift */,
+				7ED4338C299931A5004E8AD1 /* SettingsModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7ED4335D298D62D3004E8AD1 /* Build configuration list for PBXNativeTarget "Corgify" */;
 			buildPhases = (
+				6F1006063C0CC19049A4F6D3 /* [CP] Check Pods Manifest.lock */,
 				7ED43345298D62D1004E8AD1 /* Sources */,
 				7ED43346298D62D1004E8AD1 /* Frameworks */,
 				7ED43347298D62D1004E8AD1 /* Resources */,
+				AF061AFE35E05E386DEA7468 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,19 +277,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F1006063C0CC19049A4F6D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Corgify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF061AFE35E05E386DEA7468 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Corgify/Pods-Corgify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Corgify/Pods-Corgify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Corgify/Pods-Corgify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7ED43345298D62D1004E8AD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7ED43369298D65F9004E8AD1 /* SearchViewController.swift in Sources */,
-				7ED43389298D671A004E8AD1 /* ProfileModel.swift in Sources */,
+				7ED43389298D671A004E8AD1 /* UserProfileModel.swift in Sources */,
 				7ED43383298D66FE004E8AD1 /* PlaylistModel.swift in Sources */,
 				7ED4337D298D66BF004E8AD1 /* AuthManager.swift in Sources */,
 				7ED4338B298D7BCA004E8AD1 /* AuthResponse.swift in Sources */,
 				7ED43367298D65C3004E8AD1 /* TabBarViewController.swift in Sources */,
 				7ED43375298D6676004E8AD1 /* ProfileViewController.swift in Sources */,
 				7ED43351298D62D1004E8AD1 /* HomeViewController.swift in Sources */,
+				7ED4338D299931A5004E8AD1 /* SettingsModels.swift in Sources */,
 				7ED4336F298D664F004E8AD1 /* AuthViewController.swift in Sources */,
 				7ED43381298D66DB004E8AD1 /* HapticsManager.swift in Sources */,
 				7ED43385298D670A004E8AD1 /* AudioTrackModel.swift in Sources */,
@@ -406,6 +479,7 @@
 		};
 		7ED4335E298D62D3004E8AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0676BC325844387C437DB1F4 /* Pods-Corgify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -433,6 +507,7 @@
 		};
 		7ED4335F298D62D3004E8AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 369121501A8A04BB7720986C /* Pods-Corgify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
