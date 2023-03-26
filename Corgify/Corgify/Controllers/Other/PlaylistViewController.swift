@@ -10,6 +10,9 @@ import UIKit
 final class PlaylistViewController: UIViewController {
     private let playlist: Playlist
     
+    private var viewModels = [RecommendedTrackCellViewModel]()
+    private var tracks = [AudioTrack]()
+    
     private let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewCompositionalLayout(
@@ -45,8 +48,6 @@ final class PlaylistViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    private var viewModels = [RecommendedTrackCellViewModel]()
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -75,6 +76,7 @@ final class PlaylistViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
+                    self?.tracks = model.tracks.items.compactMap( {$0.track } )
                     self?.viewModels = model.tracks.items.compactMap({
                         RecommendedTrackCellViewModel(
                             name: $0.track.name,
@@ -148,13 +150,15 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        // Play song
+        let track = tracks[indexPath.row]
+        PlaybackPresenter.startPlayback(from: self, track: track)
     }
 }
 
 extension PlaylistViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
-        // Start play list in queue
-        print("playing")
+        PlaybackPresenter.startPlayback(
+            from: self,
+            tracks: tracks)
     }
 }
