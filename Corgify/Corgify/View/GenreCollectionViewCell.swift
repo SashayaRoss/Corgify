@@ -1,14 +1,15 @@
 //
-//  GenreCollectionViewCell.swift
+//  CategoryCollectionViewCell.swift
 //  Corgify
 //
 //  Created by Aleksandra Kustra on 24/03/2023.
 //
 
 import UIKit
+import SDWebImage
 
-final class GenreCollectionViewCell: UICollectionViewCell {
-    static let identifier = "GenreCollectionViewCell"
+final class CategoryCollectionViewCell: UICollectionViewCell {
+    static let identifier = "CategoryCollectionViewCell"
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -50,6 +51,7 @@ final class GenreCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         label.text = nil
+        imageView.image = UIImage(systemName: "music.quarternote.3", withConfiguration: UIImage.SymbolConfiguration(pointSize: 50, weight: .regular))
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +62,7 @@ final class GenreCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         imageView.frame = CGRect(
             x: contentView.width / 2,
-            y: 0,
+            y: 10,
             width: contentView.width / 2,
             height: contentView.height / 2)
         label.frame = CGRect(
@@ -70,8 +72,9 @@ final class GenreCollectionViewCell: UICollectionViewCell {
             height: contentView.height / 2)
     }
     
-    func configure(with title: String) {
-        label.text = title
+    func configure(with viewModel: CategoryCollectionViewCellViewModel) {
+        label.text = viewModel.title
+        imageView.sd_setImage(with: viewModel.artworkURL, completed: nil)
         contentView.backgroundColor = colors.randomElement()
     }
 }

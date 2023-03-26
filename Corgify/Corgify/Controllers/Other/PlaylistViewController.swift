@@ -123,7 +123,6 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
         ) as? RecommendedTrackCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .red
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }

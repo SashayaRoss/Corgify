@@ -10,6 +10,10 @@ struct FeaturedPlaylistModel: Codable {
     let playlists: PlaylistModel
 }
 
+struct CategoryPlaylistModel: Codable {
+    let playlists: PlaylistModel
+}
+
 struct PlaylistModel: Codable {
     let items: [Playlist]
 }
