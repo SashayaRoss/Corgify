@@ -11,10 +11,16 @@ protocol PlayerControllsViewDelegate: AnyObject {
     func playerControllsViewDidTapPlayPauseButton(_ playersControllView: PlayerControllsView)
     func playerControllsViewDidTapForwardButton(_ playersControllView: PlayerControllsView)
     func playerControllsViewDidTapPlayBackButton(_ playersControllView: PlayerControllsView)
+    func playerControllsView(_ playersControllView: PlayerControllsView, didSlideSlider value: Float )
+}
+
+struct PlayerControlsViewModel {
+    let title: String?
+    let subtitle: String?
 }
 
 final class PlayerControllsView: UIView {
-    
+    private var isPlaying: Bool = true
     weak var delegate: PlayerControllsViewDelegate?
     
     private let volumeSlider: UISlider = {
@@ -86,6 +92,7 @@ final class PlayerControllsView: UIView {
         addSubview(subtitleLabel)
         
         addSubview(volumeSlider)
+        volumeSlider.addTarget(self, action: #selector(didSlideSlider(_:)), for: .valueChanged)
         
         addSubview(backButton)
         addSubview(nextButton)
@@ -120,7 +127,22 @@ final class PlayerControllsView: UIView {
     }
     
     @objc private func didTapPlayPause() {
+        self.isPlaying = !isPlaying
         delegate?.playerControllsViewDidTapPlayPauseButton(self)
+        
+        // Update icon
+        let pause = UIImage(
+            systemName: "pause.fill",
+            withConfiguration: UIImage.SymbolConfiguration(
+                pointSize: 34,
+                weight: .regular))
+        let play = UIImage(
+            systemName: "play.fill",
+            withConfiguration: UIImage.SymbolConfiguration(
+                pointSize: 34,
+                weight: .regular))
+        playPauseButton.setImage(isPlaying ? pause : play, for: .normal)
+        
     }
     
     @objc private func didTapBack() {
@@ -129,5 +151,15 @@ final class PlayerControllsView: UIView {
     
     @objc private func didTapNext() {
         delegate?.playerControllsViewDidTapForwardButton(self)
+    }
+    
+    @objc private func didSlideSlider(_ slider: UISlider) {
+        let value = slider.value
+        delegate?.playerControllsView(self, didSlideSlider: value)
+    }
+    
+    func configure(with viewModel: PlayerControlsViewModel) {
+        nameLabel.text = viewModel.title
+        subtitleLabel.text = viewModel.subtitle
     }
 }
