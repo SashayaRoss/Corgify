@@ -58,7 +58,28 @@ final class SettingsViewController: UIViewController, UITableViewDelegate, UITab
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func signOutTapped() {}
+    private func signOutTapped() {
+        let actionSheet = UIAlertController(title: "Sign out",
+                                            message: "Are you sure?",
+                                            preferredStyle: .alert)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { [weak self] _ in
+            AuthManager.shared.signOut { [weak self] signedOut in
+                if signedOut {
+                    DispatchQueue.main.async {
+                        let navVC = UINavigationController(rootViewController: WelcomeScreenViewController())
+                        navVC.navigationBar.prefersLargeTitles = true
+                        navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+                        navVC.modalPresentationStyle = .fullScreen
+                        self?.present(navVC, animated: true, completion: {
+                            self?.navigationController?.popToRootViewController(animated: false)
+                        })
+                    }
+                }
+            }
+        }))
+        present(actionSheet, animated: true)
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
