@@ -52,7 +52,7 @@ final class WelcomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Spotify"
+        title = "Corgify"
         
         view.addSubview(backgroundImageView)
         view.addSubview(ovarlayView)

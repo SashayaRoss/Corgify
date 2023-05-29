@@ -1,6 +1,8 @@
 # Corgify
 Spotify clone created for learning purposes
 
+Created with tutorial from: iOS Academy (Building Spotify App in Swift 5 - 2022)
+
 ## Features
 
 ### Login with spotify

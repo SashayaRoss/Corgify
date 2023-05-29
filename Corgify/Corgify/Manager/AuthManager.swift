@@ -12,8 +12,8 @@ final class AuthManager {
     private var refreshToken: Bool = false
     
     struct Constants {
-        static let clientID = "8f8b5ca7fb62492ab4809117ce5a9003"
-        static let clientSecret = "dea51654ecd04a3c948a0082bbed7fc9"
+        static let clientID = "[CLIENT ID]"
+        static let clientSecret = "[CLIENT SECRET]"
         static let tokenAPIURL = "https://accounts.spotify.com/api/token"
         static let redirectURI = "https://daretodev.webflow.io"
         static let scopes = "user-read-private%20playlist-modify-public%20playlist-read-private%20playlist-modify-private%20user-library-modify%20user-library-read%20user-read-email"
