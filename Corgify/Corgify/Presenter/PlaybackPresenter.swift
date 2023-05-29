@@ -32,11 +32,12 @@ final class PlaybackPresenter {
            let track = track {
             return track
         } else if let player = self.playerQueue, !tracks.isEmpty {
-//            let item = player.currentItem
-//            let items = player.items()
-//            guard let index = items.firstIndex(where: { $0 == item }) else {
-//                return nil
-//            }
+            //TODO: 
+            let item = player.currentItem
+            let items = player.items()
+            guard let index = items.firstIndex(where: { $0 == item }) else {
+                return nil
+            }
             return tracks[index]
         }
         return nil
@@ -121,9 +122,9 @@ extension PlaybackPresenter: PlayerViewControllerDelegate {
             playerQueue?.pause()
             playerQueue?.removeAllItems()
                 // TODO:
-//            playerQueue = AVQueuePlayer(items: [firstItem])
-//            playerQueue?.play()
-//            playerQueue?.volume = 0.5
+            playerQueue = AVQueuePlayer(items: [firstItem])
+            playerQueue?.play()
+            playerQueue?.volume = 0.5
         }
     }
     
